@@ -1,0 +1,35 @@
+this is my text file
+-- Notes
+.container-fluid: The.container-fluid class provides a full-width container which spans the entire width of the viewport. In the below example, the div with class “container-fluid” will take up the complete width of the viewport and will expand or shrink whenever the viewport is resized. HTML
+ 
+1.ye django messages framework se kiya
+ agar msg ho tabhi show karna
+
+{% if messages %}
+<ul class="messages">
+    {% for message in messages %}
+    <li{% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>
+    {% endfor %}
+</ul>
+{% endif %}
+
+2. bootstrap se alert warning
+<div class="alert alert-warning alert-dismissible fade show" role="alert">
+  <strong>Holy guacamole!</strong> You should check in on some of those fields below.
+  <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+</div>
+
+3. final in --
+
+ {% if messages %}
+     {% for message in messages %}
+      <div class="alert alert-{{ message.tags }} alert-dismissible fade show my-0" role="alert">
+        {{ message }}
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+      </div>
+      
+      {% endfor %}
+      {% endif %}
+
+*** Django comes with a fantastic feature called Messages. This makes it easy to show messages to your users. Why should I use Messages? Messages are used so you can give feedback to your visitors when something happens. Like if they submit a form, you might want to show a success message if everything is okay.
+
